@@ -3,8 +3,8 @@ from colorama import Fore
 FORES = [Fore.RED, Fore.BLUE, Fore.YELLOW, Fore.GREEN]
 
 
-def colored_stats(s, color=Fore.RED, **kwargs):
-    print(f"{color}{s}")
+def colored_stats(color=Fore.RED, **kwargs):
+    creature = input(f"{color}Creature:")
     healt = input("Healt:")
     if stats == "a":
         oxygen = input("Oxygen:")
@@ -32,10 +32,9 @@ while True:
             print(Fore.MAGENTA + "Wrong input, try again!")
         else:
             while amount > 0:
-                creature = input("Creature:")
                 for fore in FORES:
                     print("")
-                    colored_stats(f"Creature:{creature}", color=fore)
+                    colored_stats(color=fore)
                     amount -= 1
                     if amount == 0:
                         break
